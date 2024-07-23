@@ -1,0 +1,55 @@
+import React from "react";
+import "./Home.css";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import Footer from "./Footer";
+import Image1 from "../assets/resume-image-1.jpg"
+import Image2 from "../assets/resume-image-2.jpg"
+import Image3 from "../assets/resume-image-3.jpg"
+
+function Home() {
+  return (
+    <>
+      <div className="home-container">
+        <div className="section-1">
+          <img className="resume-image resume-image-1" src={Image1}/>
+          <img className="resume-image resume-image-2" src={Image2} />
+          <img className="resume-image resume-image-3" src={Image3} />
+        </div>
+        <div className="section-1-contents">
+          <h2>Create your Resume Now</h2>
+          <span>
+            Save time with our easy 3-step resume builder. No more writer’s
+            block or formatting difficulties in Word. Rapidly make a perfect
+            resume employers love.
+          </span>
+          <Link to="/create-resume">
+            <Button size="lg" variant="primary" className="create-btn">
+              Create New resume
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className="section-2">
+        <p className="d-flex justify-content-center">
+          Where are they getting hired?
+        </p>
+        <div className="companies container mb-4">
+          <img className="company-logo-1 p-1" alt=""></img>
+          <img className="company-logo-1 p-1" alt=""></img>
+          <img className="company-logo-3  p-1" alt=""></img>
+          <img className="company-logo-1  p-1" alt=""></img>
+          <img className="company-logo-5  p-1" alt=""></img>
+        </div>
+        <div className="d-flex justify-content-center">
+          <Button size="lg" variant="" className="upgrad-btn mt-4">
+            Upgrad Your resume
+          </Button>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default Home;
