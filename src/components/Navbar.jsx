@@ -1,9 +1,8 @@
 import React from "react";
-import { Navbar, Nav, Button, NavbarBrand } from "react-bootstrap";
-import { Route, NavLink, Routes, Link } from "react-router-dom";
-import { ToastContainer, Slide } from "react-toastify";
-import Home from "./Home";
-import CreateResume from "./CreateResume";
+import { Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { Slide, ToastContainer } from "react-toastify";
+import "./Navbar.css"
 function NavBar() {
   return (
     <>
@@ -14,26 +13,23 @@ function NavBar() {
         sticky="top"
         className="bg-light"
       >
-        <Navbar.Brand>
-          <Nav.Link>
-            <span className="brand">
-              Resume <strong className="">Builder</strong>
+        <Navbar.Brand >
+          <Nav.Link href="/">
+            <span className="brand m-4">
+              Resume <strong>Builder</strong>
             </span>
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
+          {/* <Nav className="mr-auto">
             <Nav.Link>Resume Templates</Nav.Link>
             <Nav.Link>Resume Examples</Nav.Link>
             <Nav.Link>Resources</Nav.Link>
-          </Nav>
-          <Nav>
-         
-
-            
-              <NavLink to="/create-resume">Create Resume</NavLink>
-
+          </Nav> */}
+          <Nav className="nav-list">
+            <NavLink to="/create-resume">Create Resume</NavLink>
+            <NavLink to="/templates">Templates</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

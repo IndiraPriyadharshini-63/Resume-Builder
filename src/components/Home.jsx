@@ -1,18 +1,18 @@
 import React from "react";
-import "./Home.css";
-import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Image1 from "../assets/resume-image-1.jpg";
+import Image2 from "../assets/resume-image-2.jpg";
+import Image3 from "../assets/resume-image-3.jpg";
 import Footer from "./Footer";
-import Image1 from "../assets/resume-image-1.jpg"
-import Image2 from "../assets/resume-image-2.jpg"
-import Image3 from "../assets/resume-image-3.jpg"
+import "./Home.css";
 
 function Home() {
   return (
     <>
       <div className="home-container">
         <div className="section-1">
-          <img className="resume-image resume-image-1" src={Image1}/>
+          <img className="resume-image resume-image-1" src={Image1} />
           <img className="resume-image resume-image-2" src={Image2} />
           <img className="resume-image resume-image-3" src={Image3} />
         </div>
