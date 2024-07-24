@@ -2,26 +2,26 @@ import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Slide, ToastContainer } from "react-toastify";
-import "./Navbar.css"
+import "./Navbar.css";
 function NavBar() {
   return (
     <>
       <Navbar
         collapseOnSelect
         expand="lg"
-        variant="lihgt"
+        variant="light"
         sticky="top"
-        className="bg-light"
+        className="bg-light d-flex "
       >
-        <Navbar.Brand >
+        <Navbar.Brand className="justify-content-start">
           <Nav.Link href="/">
-            <span className="brand m-4">
+            <span className="brand ms-4">
               Resume <strong>Builder</strong>
             </span>
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav " className="justify-content-end me-4" >
           {/* <Nav className="mr-auto">
             <Nav.Link>Resume Templates</Nav.Link>
             <Nav.Link>Resume Examples</Nav.Link>

@@ -6,30 +6,32 @@ import Image2 from "../assets/resume-image-2.jpg";
 import Image3 from "../assets/resume-image-3.jpg";
 import Footer from "./Footer";
 import "./Home.css";
+import Template1 from "../Templates/Template1";
 
 function Home() {
   return (
     <>
-      <div className="home-container">
-        <div className="section-1">
+      <div className="home-container d-flex flex-row justify-content-between">
+        <div className="section-1 ">
           <img className="resume-image resume-image-1" src={Image1} />
           <img className="resume-image resume-image-2" src={Image2} />
           <img className="resume-image resume-image-3" src={Image3} />
         </div>
-        <div className="section-1-contents">
+        <div className="section-1-contents p-5">
           <h2>Create your Resume Now</h2>
-          <span>
+          <span className="mt-5 mb-5">
             Save time with our easy 3-step resume builder. No more writer’s
             block or formatting difficulties in Word. Rapidly make a perfect
             resume employers love.
           </span>
           <Link to="/create-resume">
-            <Button size="lg" variant="primary" className="create-btn">
+            <Button size="lg" variant="primary" className="create-btn ">
               Create New resume
             </Button>
           </Link>
         </div>
       </div>
+      <Template1 />
       <div className="section-2">
         <p className="d-flex justify-content-center">
           Where are they getting hired?
@@ -47,6 +49,7 @@ function Home() {
           </Button>
         </div>
       </div>
+      
       <Footer />
     </>
   );
