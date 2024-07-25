@@ -1,14 +1,34 @@
+import { Stack } from "@mui/material";
 import React from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import Image1 from "../assets/resume-image-1.jpg";
 import Image2 from "../assets/resume-image-2.jpg";
 import Image3 from "../assets/resume-image-3.jpg";
+import { templates } from "../Data/Templates";
+import { SELECTTEMPLATE } from "../Redux/Actions";
+import DarkEffect from "./DarkEffect";
 import Footer from "./Footer";
 import "./Home.css";
-import Template1 from "../Templates/Template1";
 
-function Home() {
+const mapStateToProps = (state) => ({
+  selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId
+});
+
+
+const mapDispatchToProps = (dispatch) => ({
+  setSelectedTemplateId: (id) => dispatch(SELECTTEMPLATE(id))
+
+});
+
+
+function Home(props) {
+  const navigate = useNavigate();
+  const navigateToFill = (id) => {
+    props.setSelectedTemplateId(id);
+    navigate("/template/FillDetails")
+  }
   return (
     <>
       <div className="home-container d-flex flex-row justify-content-between">
@@ -31,7 +51,7 @@ function Home() {
           </Link>
         </div>
       </div>
-      <Template1 />
+
       <div className="section-2">
         <p className="d-flex justify-content-center">
           Where are they getting hired?
@@ -49,10 +69,59 @@ function Home() {
           </Button>
         </div>
       </div>
-      
+
+      {/* template list */}
+
+      <div className="template-list">
+        <div className="home-templates-count">
+          <h3 className="template-header-title">Templates</h3>
+          <p className="template-select-text">
+            Select a template to get started
+          </p>
+          <Stack
+            sx={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: {
+                sm: "1fr 1fr ",
+                md: "1fr 1fr ",
+                lg: "1fr 1fr 1fr",
+                xl: "1fr 1fr 1fr 1fr",
+              },
+              gridGap: "40px",
+            }}
+          >
+            {templates.map((template) => {
+              return (
+                <div
+                  key={template.id}
+                  id="template"
+                  className="templates-img-cont"
+                >
+                  <img
+                    className="template-img"
+                    src={template.template_img}
+                    alt={template.template_name}
+                  />
+                  <DarkEffect />
+                  <Button
+                    className="use-template-btn"
+                    size="medium"
+                    variant="primary"
+                    onClick={() => navigateToFill(template.id)}
+                  >
+                    Use Template
+                  </Button>
+                </div>
+              );
+            })}
+          </Stack>
+        </div>
+      </div>
+
       <Footer />
     </>
   );
 }
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

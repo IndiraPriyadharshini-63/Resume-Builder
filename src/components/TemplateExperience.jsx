@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Template2() {
+function TemplateExperience() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Template2() {
   )
 }
 
-export default Template2
+export default TemplateExperience

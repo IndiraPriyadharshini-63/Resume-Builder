@@ -1,23 +1,49 @@
 import React from "react";
-import { CardImg } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-
-import TemplateImg1 from "../assets/templates/download.png";
-
+import { Container, Paper } from "@mui/material";
+import { data } from "../Data/Data";
+import TemplateHeader from "../components/TemplateHeader";
+import TemplateHeading from "../components/TemplateHeading";
+import TemplateExperience from "../components/TemplateExperience";
+import TemplateEducation from "../components/TemplateEducation";
+import "../Templates/Template1.css";
+import TemplateSkills from "../components/TemplateSkills";
 function Template1(props) {
   return (
     <>
-      <Card style={{ width: "18rem", position: "relative" }}>
-        <CardImg variant="top" src={TemplateImg1} />
-
-        <Button
-          variant="primary"
-          style={{ position: "absolute", top: "150px", left: "75px" }}
-        >
-          Use Template
-        </Button>
-      </Card>
+      <Paper
+        sx={{
+          height: {
+            xs: "500px",
+            sm: "550px",
+            md: "600px",
+            lg: "650px",
+            xl: "700px",
+          },
+          width: {
+            xs: "350px",
+            sm: "400px",
+            md: "450px",
+            lg: "500px",
+            xl: "550px",
+          },
+        }}
+        elevation={3}
+        id="1"
+      >
+        <TemplateHeader
+          primaryColor={"#C98A55"}
+          secondaryColor={"black"}
+          bgColor={"white"}
+        />
+        <Container>
+          <TemplateHeading />
+          <TemplateExperience />
+          <TemplateHeading />
+          <TemplateEducation />
+          <TemplateHeading />
+          <TemplateSkills />
+        </Container>
+      </Paper>
     </>
   );
 }
