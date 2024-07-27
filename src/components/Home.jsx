@@ -52,7 +52,7 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="section-2">
+      {/* <div className="section-2">
         <p className="d-flex justify-content-center">
           Where are they getting hired?
         </p>
@@ -68,7 +68,7 @@ function Home(props) {
             Upgrad Your resume
           </Button>
         </div>
-      </div>
+      </div> */}
 
       {/* template list */}
 

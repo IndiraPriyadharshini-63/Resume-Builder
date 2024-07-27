@@ -18,6 +18,8 @@ import { ADDPERSONALINFO } from "../Redux/Actions";
 import { useForm } from "react-hook-form";
 import Avatar1 from "react-avatar-edit";
 import InputComp from "./InputComp";
+import "./styles/PersonalInfo.css";
+import BackNextBtn from "./BackNextBtn";
 
 const mapStateToProps = (state) => ({
   personalInfo: state.personalInfoReducer.personalInfo,
@@ -75,7 +77,6 @@ function PersonalInfo(props) {
     setImg(null);
   };
 
-  // Windows Width
   const getWindowSize = () => {
     const { innerWidth, innerHeight } = window;
     return { innerWidth, innerHeight };
@@ -168,15 +169,91 @@ function PersonalInfo(props) {
           </DialogActions>
         </BootstrapDialog>
       </div>
-      <form>
-         <div className="personal-info-form-fields">
-            <InputComp />
-            <InputComp />
-            <InputComp />
-         </div>
+      <form onSubmit={handleSubmit(handleNext)}>
+        <div className="personal-info-form-fields">
+          <InputComp
+            title={"First Name *"}
+            type={"text"}
+            name={"firstName"}
+            register={register}
+            multiline={false}
+            // value={props.personalInfo.firstName}
+            // setValue={(value) =>
+            //   props.onADDPERSONALINFO({
+            //     ...props.personalInfo,
+            //     firstName: value,
+            //   })
+            // }
+            // error={errors.firstName ? true : false}
+            // errorMessage={errors.firstName ? errors.firstName.message : null}
+          />
+          <InputComp
+            title={"Last Name "}
+            name={"lastName"}
+            register={register}
+            multiline={false}
+          />
+          <InputComp
+            title={"Email *"}
+            type={"email"}
+            name={"email"}
+            register={register}
+            multiline={false}
+          />
+          <InputComp
+            title={"Mobile *"}
+            type={"number"}
+            name={"mobile"}
+            register={register}
+            multiline={false}
+          />
+        </div>
+        <InputComp
+          title={"Address *"}
+          type={"text"}
+          name={"address"}
+          register={register}
+          multiline={false}
+        />
+        <div style={{ marginTop: 20 }} className="personal-Info-form-fields">
+          <InputComp
+            title={"City*"}
+            type={"text"}
+            name={"city"}
+            register={register}
+            multiline={false}
+          />
+          <InputComp
+            title={"State *"}
+            type={"text"}
+            name={"state"}
+            register={register}
+            multiline={false}
+          />
+          <InputComp
+            title={"Postal Code *"}
+            type={"number"}
+            name={"postalCode"}
+            register={register}
+            multiline={false}
+          />
+        </div>
+        <InputComp
+          title={"Objective *"}
+          type={"text"}
+          name={"objective"}
+          register={register}
+        />
+        <Divider className="personal-details-divider" />
+        <BackNextBtn
+          loading={loading}
+          tab={props.tab}
+          nextTitle={"Next"}
+          backTitle={"Back"}
+        />
       </form>
     </Paper>
   );
 }
 
-export default PersonalInfo;
+export default connect(mapStateToProps, mapDispatchToProps)(PersonalInfo);

@@ -127,6 +127,7 @@ function FillDetailsSidebar(props) {
                 />
               </ListItemButton>
             </ListItem>
+            <Divider />
             <ListItem disablePadding>
               <ListItemButton
                 component="a"

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles/FillDetails.css";
 import FillDetailsSidebar from "../components/FillDetailsSidebar";
 import PersonalInfo from "../components/PersonalInfo";
-
+import WorkExperience from "../components/WorkExperience";
 
 function FillDetails(props) {
   const [tab, setTab] = useState(0);
@@ -12,6 +12,7 @@ function FillDetails(props) {
         <div className="details-filling">
           <FillDetailsSidebar tab={tab} setTab={setTab} />
           {tab === 0 ? <PersonalInfo tab={tab} setTab={setTab} /> : null}
+          {tab === 1 ? <WorkExperience tab={tab} setTab={setTab} /> : null}
         </div>
       )}
     </div>
