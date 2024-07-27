@@ -109,11 +109,9 @@ function WorkExperience(props) {
   return (
     <Paper className="work-experience-paper" elevation={3}>
       <h2 className="workExperienceHeading">Work Experience</h2>
-      <form onSubmit={handleSubmit(handleNext)}>
-        
-      </form>
+      <form onSubmit={handleSubmit(handleNext)}></form>
     </Paper>
   );
 }
 
-export default WorkExperience;
+export default connect(mapStateToProps, mapDispatchToProps)(WorkExperience);

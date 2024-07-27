@@ -36,7 +36,7 @@ function Template1(props) {
           bgColor={"white"}
         />
         <Container>
-          <TemplateHeading />
+          <TemplateHeading   />
           <TemplateExperience />
           <TemplateHeading />
           <TemplateEducation />

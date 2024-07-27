@@ -4,11 +4,12 @@ import { inputCheck } from "../utilities/InputCheck";
 import { TextField } from "@mui/material";
 
 function InputComp(props) {
+  // console.log(props);
   return (
     <div className="input-component">
       <p className="input-title">{props.title}</p>
       <TextField
-        // {...props.register(props.name, inputCheck(props.type, props.name))}
+        {...props.register(props.name, inputCheck(props.type, props.name))}
         multiline={props.multiline}
         rows={5}
         value={props.value}

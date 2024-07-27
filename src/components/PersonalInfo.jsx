@@ -177,21 +177,30 @@ function PersonalInfo(props) {
             name={"firstName"}
             register={register}
             multiline={false}
-            // value={props.personalInfo.firstName}
-            // setValue={(value) =>
-            //   props.onADDPERSONALINFO({
-            //     ...props.personalInfo,
-            //     firstName: value,
-            //   })
-            // }
-            // error={errors.firstName ? true : false}
-            // errorMessage={errors.firstName ? errors.firstName.message : null}
+            value={props.personalInfo.firstName}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                firstName: value,
+              })
+            }
+            error={errors.firstName ? true : false}
+            errorMessage={errors.firstName ? errors.firstName.message : null}
           />
           <InputComp
             title={"Last Name "}
             name={"lastName"}
             register={register}
             multiline={false}
+            value={props.personalInfo.lastName}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                lastName: value,
+              })
+            }
+            error={errors.lastName ? true : false}
+            errorMessage={errors.lastName ? errors.lastName.message : null}
           />
           <InputComp
             title={"Email *"}
@@ -199,6 +208,15 @@ function PersonalInfo(props) {
             name={"email"}
             register={register}
             multiline={false}
+            value={props.personalInfo.email}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                email: value,
+              })
+            }
+            error={errors.email ? true : false}
+            errorMessage={errors.email ? errors.email.message : null}
           />
           <InputComp
             title={"Mobile *"}
@@ -206,6 +224,15 @@ function PersonalInfo(props) {
             name={"mobile"}
             register={register}
             multiline={false}
+            value={props.personalInfo.mobile}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                mobile: value,
+              })
+            }
+            error={errors.mobile ? true : false}
+            errorMessage={errors.mobile ? errors.mobile.message : null}
           />
         </div>
         <InputComp
@@ -214,6 +241,15 @@ function PersonalInfo(props) {
           name={"address"}
           register={register}
           multiline={false}
+          value={props.personalInfo.address}
+          setValue={(value) =>
+            props.onADDPERSONALINFO({
+              ...props.personalInfo,
+              address: value,
+            })
+          }
+          error={errors.address ? true : false}
+          errorMessage={errors.address ? errors.address.message : null}
         />
         <div style={{ marginTop: 20 }} className="personal-Info-form-fields">
           <InputComp
@@ -222,6 +258,15 @@ function PersonalInfo(props) {
             name={"city"}
             register={register}
             multiline={false}
+            value={props.personalInfo.city}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                city: value,
+              })
+            }
+            error={errors.city ? true : false}
+            errorMessage={errors.city ? errors.city.message : null}
           />
           <InputComp
             title={"State *"}
@@ -229,6 +274,15 @@ function PersonalInfo(props) {
             name={"state"}
             register={register}
             multiline={false}
+            value={props.personalInfo.state}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                state: value,
+              })
+            }
+            error={errors.state ? true : false}
+            errorMessage={errors.state ? errors.state.message : null}
           />
           <InputComp
             title={"Postal Code *"}
@@ -236,6 +290,15 @@ function PersonalInfo(props) {
             name={"postalCode"}
             register={register}
             multiline={false}
+            value={props.personalInfo.postalCode}
+            setValue={(value) =>
+              props.onADDPERSONALINFO({
+                ...props.personalInfo,
+                postalCode: value,
+              })
+            }
+            error={errors.postalCode ? true : false}
+            errorMessage={errors.postalCode ? errors.postalCode.message : null}
           />
         </div>
         <InputComp
@@ -243,6 +306,15 @@ function PersonalInfo(props) {
           type={"text"}
           name={"objective"}
           register={register}
+          value={props.personalInfo.objective}
+          setValue={(value) =>
+            props.onADDPERSONALINFO({
+              ...props.personalInfo,
+              objective: value,
+            })
+          }
+          error={errors.objective ? true : false}
+          errorMessage={errors.objective ? errors.objective.message : null}
         />
         <Divider className="personal-details-divider" />
         <BackNextBtn
