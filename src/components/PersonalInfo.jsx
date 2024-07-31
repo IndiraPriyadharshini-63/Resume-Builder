@@ -39,6 +39,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 function PersonalInfo(props) {
+  // console.log(props);
   const [loading, setLoading] = useState(false);
   const {
     register,

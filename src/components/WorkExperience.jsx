@@ -30,6 +30,7 @@ const Years = [
   "2014",
 ];
 function WorkExperience(props) {
+  // console.log(props);
   const {
     register,
     handleSubmit,
@@ -39,14 +40,11 @@ function WorkExperience(props) {
 
   const [loading, setLoading] = useState(false);
 
-  // Back Click Function
   const handleBack = () => {
     props.setTab(props.tab - 1);
   };
 
-  // Next Click Function
   const handleNext = (data) => {
-    // console.log(data);
     setLoading(true);
 
     let experienceOne = {};
@@ -75,7 +73,6 @@ function WorkExperience(props) {
     }, 1000);
   };
 
-  //  For adding new Experience
   const addNewExperience = () => {
     props.setADDEXPERIENCE({
       id: props.experiences.length + 1,
@@ -86,7 +83,6 @@ function WorkExperience(props) {
     });
   };
 
-  // For adding Job Title
   const editJobTitleExperience = (value, id) => {
     const newExperiences = props.experiences.map((experience) => {
       if (experience.id === id) {
@@ -97,7 +93,6 @@ function WorkExperience(props) {
     props.setADDEXPERIENCEALL(newExperiences);
   };
 
-  //  For Editing the Organizaton Name
   const editOrganisationNameExperience = (value, id) => {
     const newExperiences = props.experiences.map((experience) => {
       if (experience.id === id) {
@@ -109,7 +104,146 @@ function WorkExperience(props) {
   return (
     <Paper className="work-experience-paper" elevation={3}>
       <h2 className="workExperienceHeading">Work Experience</h2>
-      <form onSubmit={handleSubmit(handleNext)}></form>
+      <form onSubmit={handleSubmit(handleNext)}>
+        {props.experiences.map((experience) => {
+          return (
+            <div key={experience.id} className="experience-cont">
+              <h3 className="experience-heading">Experience {experience.id}</h3>
+              <Divider sx={{ margin: "5px 0px" }} />
+              <div className="experience-form-cont">
+                <InputComp
+                  title={"Job Title"}
+                  type={"text"}
+                  name={"jobTitle" + experience.id}
+                  register={register}
+                  multiline={false}
+                  value={experience.jobTitle}
+                  setValue={(value) =>
+                    editJobTitleExperience(value, experience.id)
+                  }
+                  error={Boolean(errors[`jobTitle${experience.id}`])}
+                  errorMessage={
+                    errors[`jobTitle${experience.id}`]
+                      ? errors[`jobTitle${experience.id}`].message
+                      : null
+                  }
+                />
+                <InputComp
+                  title={"Org Name"}
+                  type={"text"}
+                  name={"organizationName" + experience.id}
+                  register={register}
+                  multiline={false}
+                  value={experience.organizationName}
+                  setValue={(value) =>
+                    editOrganisationNameExperience(value, experience.id)
+                  }
+                  error={
+                    errors[`organizationName${experience.id}`] ? true : false
+                  }
+                  errorMessage={
+                    errors[`organizationName${experience.id}`]
+                      ? errors[`organizationName${experience.id}`].message
+                      : null
+                  }
+                />
+                <SelectComp
+                  title={"Start Year"}
+                  errorMessage={
+                    errors[`startYear${experience.id}`]
+                      ? errors[`startYear${experience.id}`].message
+                      : null
+                  }
+                  error={errors[`startYear${experience.id}`] ? true : false}
+                >
+                  <Controller
+                    render={(props) => {
+                      return (
+                        <Select
+                          value={props.field.value}
+                          onChange={props.field.onChange}
+                          error={
+                            errors
+                              ? errors[`startYear${experience.id}`]
+                                ? true
+                                : false
+                              : false
+                          }
+                        >
+                          {Years.map((year, index) => {
+                            return (
+                              <MenuItem key={index} value={year}>
+                                {year}
+                              </MenuItem>
+                            );
+                          })}
+                        </Select>
+                      );
+                    }}
+                    name={`startYear${experience.id}`}
+                    control={control}
+                    rules={{ required: "*Please select start year" }}
+                    defaultValue={experience.startYear}
+                  />
+                </SelectComp>
+                <SelectComp
+                  title={"End Year"}
+                  errorMessage={
+                    errors[`endYear${experience.id}`]
+                      ? errors[`endYear${experience.id}`].message
+                      : null
+                  }
+                  error={errors[`endYear${experience.id}`] ? true : false}
+                >
+                  <Controller
+                    render={(props) => (
+                      <Select
+                        value={props.field.value}
+                        onChange={props.field.onChange}
+                        error={
+                          errors
+                            ? errors[`endYear${experience.id}`]
+                              ? true
+                              : false
+                            : false
+                        }
+                      >
+                        {Years.map((year, index) => {
+                          return (
+                            <MenuItem key={index} value={year}>
+                              {year}
+                            </MenuItem>
+                          );
+                        })}
+                      </Select>
+                    )}
+                    name={"endYear" + experience.id}
+                    control={control}
+                    rules={{ required: "*Please select end year" }}
+                    defaultValue={experience.endYear}
+                  />
+                </SelectComp>
+              </div>
+            </div>
+          );
+        })}
+        {props.experiences.length === 2 ? null : (
+          <div className="add-new-btn-cont">
+            <Button onClick={addNewExperience} variant="text">
+              Add New
+            </Button>
+          </div>
+        )}
+        <Divider sx={{ margin: "10px 0px" }} />
+        <BackNextBtn
+          onNext={handleNext}
+          onBack={handleBack}
+          loading={loading}
+          tab={props.tab}
+          nextTitle={"Next"}
+          backTitle={"Back"}
+        />
+      </form>
     </Paper>
   );
 }
