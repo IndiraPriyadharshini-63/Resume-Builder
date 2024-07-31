@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 function KeySkills(props) {
-  console.log(props);
+  // console.log(props);
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -52,7 +52,7 @@ function KeySkills(props) {
       <Divider />
       <form onSubmit={handleSubmit(handlePreview)}>
         <div className="key-skills-form-fields">
-          {/* {props.map((skill, index) => {
+          {props.skills.map((skill, index) => {
             return (
               <div key={index} className="key-input-with-delete">
                 <InputComp
@@ -77,10 +77,10 @@ function KeySkills(props) {
                 )}
               </div>
             );
-          })} */}
+          })}
         </div>
 
-        {/* {props.skills.length >= 6 ? null : (
+        {props.skills.length >= 6 ? null : (
           <Button
             className="add-new-btn"
             variant="text"
@@ -88,7 +88,7 @@ function KeySkills(props) {
           >
             Add new
           </Button>
-        )} */}
+        )}
         <Divider className="key-skills-divider" />
         <BackNextBtn
           onNext={handlePreview}
@@ -103,4 +103,4 @@ function KeySkills(props) {
   );
 }
 
-export default connect(mapDispatchToProps, mapDispatchToProps)(KeySkills);
+export default connect(mapStateToProps, mapDispatchToProps)(KeySkills);

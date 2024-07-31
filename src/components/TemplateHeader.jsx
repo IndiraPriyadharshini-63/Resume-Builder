@@ -2,7 +2,7 @@ import React from 'react'
 import "../components/styles/TemplateHeader.css"
 import Img from "../assets/airbnb-logo.png"
 function TemplateHeader(props) {
-  console.log(props)
+  // console.log(props)
   return (
     <>
      <div style={{ backgroundColor: props.bgColor }} >
