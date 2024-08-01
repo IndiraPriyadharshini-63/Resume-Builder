@@ -44,74 +44,8 @@ const Preview = (props) => {
       setError("");
       setLoading(true);
       const report = new JsPDF("portrait", "pt", "a4");
-      report
-        .html(document.getElementById(`${props.selectedTemplateId - 1}report`))
-        .then(() => {
-          report.save(`${resumeName}.pdf`);
-          setLoading(false);
-
-          let resumes = window.localStorage.getItem("resumes");
-
-          if (resumes) {
-            let newResumes = JSON.parse(resumes);
-
-            let resumeFound = newResumes.find(
-              (resume) => resume.id === props.selectedResumeId
-            );
-
-            if (resumeFound) {
-              const allNewResumes = newResumes.map((resume) => {
-                if (resume.id === props.selectedResumeId) {
-                  return {
-                    template_id: props.selectedTemplateId,
-                    id: props.selectedResumeId,
-                    personalInfo: props.personalInfo,
-                    experiences: props.experiences,
-                    educationInfo: props.educationInfo,
-                    skills: props.skills,
-                  };
-                } else return resume;
-              });
-
-              window.localStorage.setItem(
-                "resumes",
-                JSON.stringify(allNewResumes)
-              );
-
-              window.location.reload();
-
-              return;
-            }
-
-            newResumes.push({
-              template_id: props.selectedTemplateId,
-              id: uniqid(),
-              personalInfo: props.personalInfo,
-              experiences: props.experiences,
-              educationInfo: props.educationInfo,
-              skills: props.skills,
-            });
-
-            window.localStorage.setItem("resumes", JSON.stringify(newResumes));
-          } else {
-            window.localStorage.setItem(
-              "resumes",
-              JSON.stringify([
-                {
-                  template_id: props.selectedTemplateId,
-                  id: uniqid(),
-                  personalInfo: props.personalInfo,
-                  experiences: props.experiences,
-                  educationInfo: props.educationInfo,
-                  skills: props.skills,
-                },
-              ])
-            );
-          }
-
-          window.location.reload();
-        })
-        .catch((error) => console.log(error.message));
+      // console.log(report);
+      
     }
   };
 
