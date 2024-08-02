@@ -41,11 +41,38 @@ const Preview = (props) => {
     if (resumeName.length === 0) {
       setError("*Please fill this field");
     } else {
+      console.log("inside else");
       setError("");
       setLoading(true);
       const report = new JsPDF("portrait", "pt", "a4");
-      // console.log(report);
-      
+      report
+        .html(document.getElementById(`${props.selectedTemplateId - 1}report`))
+        .then(() => {
+          // console.log(`${resumeName} saved `);
+          report.save(`${resumeName}.pdf`);
+          setLoading(false);
+
+          let resumes = window.localStorage.getItem("resumes");
+
+          if (resumes) {
+          } else {
+            window.localStorage.setItem(
+              "resumes",
+              JSON.stringify([
+                {
+                  template_id: props.selectedTemplateId,
+                  id: uniqid(),
+                  personalInfo: props.personalInfo,
+                  experiences: props.experiences,
+                  educationInfo: props.educationInfo,
+                  skills: props.skills,
+                },
+              ])
+            );
+          }
+          window.location.reload();
+        })
+        .catch((error) => console.log(error.message));
     }
   };
 

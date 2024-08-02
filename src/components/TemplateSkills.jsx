@@ -1,11 +1,12 @@
-import React from 'react'
+import { Container } from "@mui/material";
+import React from "react";
 
-function TemplateSkills() {
+function TemplateSkills(props) {
   return (
-    <div>
-      
-    </div>
-  )
+    <Container>
+      <li className="skill">{props.skill}</li>
+    </Container>
+  );
 }
 
-export default TemplateSkills
+export default TemplateSkills;
