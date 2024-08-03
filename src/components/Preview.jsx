@@ -5,6 +5,7 @@ import { templates } from "../Data/Templates";
 import JsPDF from "jspdf";
 import uniqid from "uniqid";
 import Modal from "./Modal";
+import "./styles/Preview.css"
 
 const mapStateToProps = (state) => ({
   selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,

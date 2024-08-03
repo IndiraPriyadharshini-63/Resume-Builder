@@ -6,6 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 import BackNextBtn from "./BackNextBtn";
 import InputComp from "./InputComp";
 import SelectComp from "./SelectComp";
+import "./styles/Education.css"
 
 const Years = [
   "2024",

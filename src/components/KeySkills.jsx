@@ -6,6 +6,7 @@ import { DeleteOutlineOutlined } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
 import { ADDNEWSKILLS, EDITSKILL, DELETESKILL } from "../Redux/Actions";
 import { connect } from "react-redux";
+import "./styles/KeySkills.css"
 
 const mapStateToProps = (state) => ({
   skills: state.SkillReducer.skills,

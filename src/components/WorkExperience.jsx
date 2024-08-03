@@ -6,6 +6,7 @@ import { Button, Divider, MenuItem, Paper, Select } from "@mui/material";
 import BackNextBtn from "./BackNextBtn";
 import SelectComp from "./SelectComp";
 import InputComp from "./InputComp";
+import "./styles/WorkExperience.css"
 
 const mapStateToProps = (state) => ({
   experiences: state.workExpReducer.experiences,
