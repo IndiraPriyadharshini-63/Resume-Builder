@@ -30,6 +30,7 @@ function NavBar() {
           <Nav className="nav-list">
             <NavLink to="/create-resume">Create Resume</NavLink>
             <NavLink to="/templates">Templates</NavLink>
+            <NavLink to="/my-resumes">My Resumes</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

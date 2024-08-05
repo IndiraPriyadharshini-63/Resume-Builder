@@ -8,6 +8,7 @@ import "./components/Navbar.css";
 import Template1 from "./Templates/Template1";
 import CheckSelectedId from "./components/CheckSelectedId";
 import FillDetails from "./pages/FillDetails";
+import MyResumes from "./pages/MyResumes";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <FillDetails />
             </CheckSelectedId>
           }></Route>
+          <Route path="/my-resumes" element={<MyResumes />}/>
           
         </Routes>
       </BrowserRouter>
