@@ -6,6 +6,7 @@ import TemplateExperience from "../components/TemplateExperience";
 import TemplateEducation from "../components/TemplateEducation";
 import TemplateSkills from "../components/TemplateSkills";
 import { data } from "../Data/Data";
+import "../Templates/styles/Template2.css";
 
 function Template2(props) {
   const personalInfo = props.personalInfo

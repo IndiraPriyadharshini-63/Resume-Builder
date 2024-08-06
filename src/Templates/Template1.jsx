@@ -5,7 +5,7 @@ import TemplateHeader from "../components/TemplateHeader";
 import TemplateHeading from "../components/TemplateHeading";
 import TemplateExperience from "../components/TemplateExperience";
 import TemplateEducation from "../components/TemplateEducation";
-import "../Templates/Template1.css";
+import "../Templates/styles/Template1.css";
 import TemplateSkills from "../components/TemplateSkills";
 
 function Template1(props) {
@@ -45,33 +45,31 @@ function Template1(props) {
         id={`${props.index}report`}
       >
         <TemplateHeader
-           primaryColor={"#C98A55"}
-           secondaryColor={"black"}
-           bgColor={"white"}
-           personalInfo={personalInfo}
-           workExperience={experiences}
+          primaryColor={"#C98A55"}
+          secondaryColor={"black"}
+          bgColor={"white"}
+          personalInfo={personalInfo}
+          workExperience={experiences}
         />
         <Container>
-          <TemplateHeading  color={"#C98A55"} title={"Professional Experience"}/>
+          <TemplateHeading
+            color={"#C98A55"}
+            title={"Professional Experience"}
+          />
           <ul style={{ paddingBottom: 10 }}>
-                        {experiences.map((exp, index) => {
-                            return (
-                                <TemplateExperience
-                                    key={index}
-                                    experiences={exp} />
-                            )
-                        })}
-                    </ul>
-          
-          <TemplateHeading color={"#C98A55"} title={"Education"}/>
-          <TemplateEducation education={educationInfo}/>
-          <TemplateHeading color={"#C98A55"} title={"Key Skills"}/>
-          <ul style={{ marginBottom: 10 }}>
-                        {skills.map((skill, index) => {
-                          return <TemplateSkills key={index} skill={skill}/>
-                        })}
+            {experiences.map((exp, index) => {
+              return <TemplateExperience key={index} experiences={exp} />;
+            })}
           </ul>
-          
+
+          <TemplateHeading color={"#C98A55"} title={"Education"} />
+          <TemplateEducation education={educationInfo} />
+          <TemplateHeading color={"#C98A55"} title={"Key Skills"} />
+          <ul style={{ marginBottom: 10 }}>
+            {skills.map((skill, index) => {
+              return <TemplateSkills key={index} skill={skill} />;
+            })}
+          </ul>
         </Container>
       </Paper>
     </>

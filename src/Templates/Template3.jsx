@@ -6,6 +6,7 @@ import TemplateExperience from "../components/TemplateExperience";
 import TemplateEducation from "../components/TemplateEducation";
 import TemplateSkills from "../components/TemplateSkills";
 import { data } from "../Data/Data";
+import "../Templates/styles/Template3.css";
 
 function Template3(props) {
   console.log(props);
