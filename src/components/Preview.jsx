@@ -1,11 +1,11 @@
-import React, { cloneElement, useState } from "react";
+import React, { useState } from "react";
 import { Button, CircularProgress, Container, TextField } from "@mui/material";
 import { connect } from "react-redux";
 import { templates } from "../Data/Templates";
 import JsPDF from "jspdf";
 import uniqid from "uniqid";
 import Modal from "./Modal";
-import "./styles/Preview.css"
+import "./styles/Preview.css";
 
 const mapStateToProps = (state) => ({
   selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
@@ -56,6 +56,43 @@ const Preview = (props) => {
           let resumes = window.localStorage.getItem("resumes");
 
           if (resumes) {
+            let newResumes = JSON.parse(resumes);
+
+            let resumeFound = newResumes.find(
+              (resume) => resume.id === props.selectedResumeId
+            );
+
+            if (resumeFound) {
+              const allNewResumes = newResumes.map((resume) => {
+                if (resume.id === props.selectedResumeId) {
+                  console.log("resume found");
+
+                  return {
+                    template_id: props.selectedTemplateId,
+                    id: props.selectedResumeId,
+                    personalInfo: props.personalInfo,
+                    experiences: props.experiences,
+                    educationInfo: props.educationInfo,
+                    skills: props.skills,
+                  };
+                } else return resume;
+              });
+              window.localStorage.setItem(
+                "resumes",
+                JSON.stringify(allNewResumes)
+              );
+              window.location.reload();
+              return;
+            }
+            newResumes.push({
+              template_id: props.selectedTemplateId,
+              id: uniqid(),
+              personalInfo: props.personalInfo,
+              experiences: props.experiences,
+              educationInfo: props.educationInfo,
+              skills: props.skills,
+            });
+            window.localStorage.setItem("resumes", JSON.stringify(newResumes));
           } else {
             window.localStorage.setItem(
               "resumes",

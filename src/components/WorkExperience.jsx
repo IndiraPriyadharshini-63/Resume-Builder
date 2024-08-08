@@ -6,7 +6,7 @@ import { Button, Divider, MenuItem, Paper, Select } from "@mui/material";
 import BackNextBtn from "./BackNextBtn";
 import SelectComp from "./SelectComp";
 import InputComp from "./InputComp";
-import "./styles/WorkExperience.css"
+import "./styles/WorkExperience.css";
 
 const mapStateToProps = (state) => ({
   experiences: state.workExpReducer.experiences,
@@ -231,7 +231,7 @@ function WorkExperience(props) {
         {props.experiences.length === 2 ? null : (
           <div className="add-new-btn-cont">
             <Button onClick={addNewExperience} variant="text">
-              Add New
+              ➕ Add
             </Button>
           </div>
         )}

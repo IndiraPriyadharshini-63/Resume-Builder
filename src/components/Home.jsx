@@ -13,29 +13,38 @@ import Footer from "./Footer";
 import "./Home.css";
 
 const mapStateToProps = (state) => ({
-  selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId
+  selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
 });
-
 
 const mapDispatchToProps = (dispatch) => ({
-  setSelectedTemplateId: (id) => dispatch(SELECTTEMPLATE(id))
-
+  setSelectedTemplateId: (id) => dispatch(SELECTTEMPLATE(id)),
 });
-
 
 function Home(props) {
   const navigate = useNavigate();
   const navigateToFill = (id) => {
     props.setSelectedTemplateId(id);
-    navigate("/template/FillDetails")
-  }
+    navigate("/template/FillDetails");
+  };
   return (
     <>
       <div className="home-container d-flex flex-row justify-content-between">
         <div className="section-1 ">
-          <img className="resume-image resume-image-1" src={Image1} />
-          <img className="resume-image resume-image-2" src={Image2} />
-          <img className="resume-image resume-image-3" src={Image3} />
+          <img
+            className="resume-image resume-image-1"
+            src={Image1}
+            alt="template1"
+          />
+          <img
+            className="resume-image resume-image-2"
+            src={Image2}
+            alt="template2"
+          />
+          <img
+            className="resume-image resume-image-3"
+            src={Image3}
+            alt="template3"
+          />
         </div>
         <div className="section-1-contents p-5">
           <h2>Create your Resume Now</h2>
@@ -51,26 +60,6 @@ function Home(props) {
           </Link>
         </div>
       </div>
-
-      {/* <div className="section-2">
-        <p className="d-flex justify-content-center">
-          Where are they getting hired?
-        </p>
-        <div className="companies container mb-4">
-          <img className="company-logo-1 p-1" alt=""></img>
-          <img className="company-logo-1 p-1" alt=""></img>
-          <img className="company-logo-3  p-1" alt=""></img>
-          <img className="company-logo-1  p-1" alt=""></img>
-          <img className="company-logo-5  p-1" alt=""></img>
-        </div>
-        <div className="d-flex justify-content-center">
-          <Button size="lg" variant="" className="upgrad-btn mt-4">
-            Upgrad Your resume
-          </Button>
-        </div>
-      </div> */}
-
-      {/* template list */}
 
       <div className="template-list">
         <div className="home-templates-count">

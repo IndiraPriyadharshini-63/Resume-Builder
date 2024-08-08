@@ -22,7 +22,6 @@
   box-shadow: 0 9px 15px rgb(100 100 123 / 7%);
 }
 .resume-image-1 {
-  /* background-image: url("../assets/resume-image-1.jpg"); */
   height: 425px;
   width: 20.8%;
   left: 16.3%;
@@ -31,7 +30,6 @@
   background-repeat: no-repeat;
 }
 .resume-image-2 {
-  /* background-image: url("../assets/resume-image-2.jpg"); */
   height: 425px;
   width: 20.8%;
   left: 22.3%;
@@ -40,7 +38,6 @@
   background-repeat: no-repeat;
 }
 .resume-image-3 {
-  /* background-image: url("../assets/resume-image-3.jpg"); */
   height: 425px;
   width: 20.8%;
   left: 28.9%;
@@ -231,7 +228,6 @@
 
 .template-list {
   padding: 20px;
-  
 }
 
 .home-templates-cont {
@@ -265,14 +261,11 @@
 
 .use-template-btn {
   position: absolute;
-  /* left: 120px;
-    top: 200px; */
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  /* visibility: hidden;
-    text-transform: capitalize; */
 }
 
 .templates-img-cont:hover {

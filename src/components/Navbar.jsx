@@ -21,15 +21,16 @@ function NavBar() {
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav " className="justify-content-end me-4" >
+        <Navbar.Collapse
+          id="responsive-navbar-nav "
+          className="justify-content-end me-4"
+        >
           {/* <Nav className="mr-auto">
             <Nav.Link>Resume Templates</Nav.Link>
             <Nav.Link>Resume Examples</Nav.Link>
             <Nav.Link>Resources</Nav.Link>
           </Nav> */}
           <Nav className="nav-list">
-            <NavLink to="/create-resume">Create Resume</NavLink>
-            <NavLink to="/templates">Templates</NavLink>
             <NavLink to="/my-resumes">My Resumes</NavLink>
           </Nav>
         </Navbar.Collapse>

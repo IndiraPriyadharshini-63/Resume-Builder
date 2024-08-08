@@ -9,7 +9,7 @@ import { data } from "../Data/Data";
 import "../Templates/styles/Template3.css";
 
 function Template3(props) {
-  console.log(props);
+  // console.log(props);
 
   const personalInfo = props.personalInfo
     ? props.personalInfo

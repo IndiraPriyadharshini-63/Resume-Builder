@@ -49,6 +49,7 @@ function MyResumes(props) {
       : [];
 
     setResumes(newResumes);
+    // console.log(resumes);
   }, []);
 
   const navigate = useNavigate();
