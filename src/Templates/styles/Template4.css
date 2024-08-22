@@ -1,0 +1,29 @@
+.top{
+      display: flex;
+      flex-direction: column;
+     
+      align-items: center;
+}
+
+.center{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+}
+.bottom{
+      display: flex;
+}
+
+.experience{
+      display: flex;
+      flex-direction: column;
+}
+
+.experienceList{
+      list-style-type:disc;
+      
+}
+.experienceList li{
+      flex-wrap: wrap;
+      
+}
