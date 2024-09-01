@@ -1,31 +1,16 @@
-import { Stack } from "@mui/material";
 import React from "react";
 import { Button } from "react-bootstrap";
-import { connect } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Image1 from "../assets/resume-image-1.jpg";
 import Image2 from "../assets/resume-image-2.jpg";
 import Image3 from "../assets/resume-image-3.jpg";
-import { templates } from "../Data/Templates";
-import { SELECTTEMPLATE } from "../Redux/Actions";
-import DarkEffect from "./DarkEffect";
 import Footer from "./Footer";
 import "./Home.css";
+import TemplateImages from "./templateImages/TemplateImages";
 
-const mapStateToProps = (state) => ({
-  selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
-});
 
-const mapDispatchToProps = (dispatch) => ({
-  setSelectedTemplateId: (id) => dispatch(SELECTTEMPLATE(id)),
-});
 
-function Home(props) {
-  const navigate = useNavigate();
-  const navigateToFill = (id) => {
-    props.setSelectedTemplateId(id);
-    navigate("/template/FillDetails");
-  };
+function Home() { 
   return (
     <>
       <div className="home-container d-flex flex-row justify-content-between">
@@ -61,7 +46,7 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="template-list">
+      {/* <div className="template-list">
         <div className="home-templates-count">
           <h3 className="template-header-title">Templates</h3>
           <p className="template-select-text">
@@ -106,11 +91,15 @@ function Home(props) {
             })}
           </Stack>
         </div>
-      </div>
+      </div> */}
+      
+
+      <TemplateImages />
+      
 
       <Footer />
     </>
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

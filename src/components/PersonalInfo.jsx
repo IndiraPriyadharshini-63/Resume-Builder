@@ -39,7 +39,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 function PersonalInfo(props) {
-  // console.log(props);
+  console.log(props);
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -316,6 +316,22 @@ function PersonalInfo(props) {
           }
           error={errors.objective ? true : false}
           errorMessage={errors.objective ? errors.objective.message : null}
+        />
+        <InputComp
+          title={"LinkedIn *"}
+          type={"text"}
+          name={"linkedIn"}
+          placeholder={"https://www.linkedin.com/"}
+          register={register}
+          value={props.personalInfo.linkedIn}
+          setValue={(value) =>
+            props.onADDPERSONALINFO({
+              ...props.personalInfo,
+              linkedIn: value,
+            })
+          }
+          error={errors.linkedIn ? true : false}
+          errorMessage={errors.linkedIn ? errors.linkedIn.message : null}
         />
         <Divider className="personal-details-divider" />
         <BackNextBtn

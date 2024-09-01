@@ -1,0 +1,45 @@
+.carousalWrapper{
+      margin: 10px;
+}
+
+.templateList{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+}
+
+.templateListItem{
+      width: 300px;
+      margin: auto;
+      /* position: relative; */
+      cursor: pointer;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) ;
+}
+.templateListItem:hover{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.templateImg{
+      width: 100%;
+      border-radius: 20px;
+}
+
+.btnGroup{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      bottom: 180px;
+}
+.Btn{
+      border-radius: 100%;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      color: white;
+      background-color: blueviolet;
+      width: 50px;
+      height: 50px;
+      
+}

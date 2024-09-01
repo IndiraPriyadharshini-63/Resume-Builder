@@ -18,6 +18,7 @@ function InputComp(props) {
         variant="outlined"
         type={props.type}
         name={props.name}
+        placeholder={props.placeholder}
         helperText={props.errorMessage ? props.errorMessage : null}
       ></TextField>
     </div>

@@ -31,7 +31,7 @@ const Years = [
   "2014",
 ];
 function WorkExperience(props) {
-  // console.log(props);
+  console.log(props);
   const {
     register,
     handleSubmit,

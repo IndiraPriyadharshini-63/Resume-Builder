@@ -20,6 +20,8 @@ function Template4(props) {
   const experiences = props.experiences
     ? props.experiences
     : data.work_experience;
+
+    // console.log(experiences[0].jobTitle)
   return (
     <>
       <Paper
@@ -77,8 +79,8 @@ function Template4(props) {
           <div className="bottomRight">
             <h1>Work Experience</h1>
             <div className="experience">
-              <h3>position</h3>
-              <h5>Location</h5>
+              <h3></h3>
+              <h5></h5>
               <div className="experienceLists">
                 <ul className="experienceList">
                   <li>

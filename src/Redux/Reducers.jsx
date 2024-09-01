@@ -17,6 +17,7 @@ const initialPersonalInfoState = {
         state: "",
         postalCode: "",
         objective: "",
+        linkedIn:""
     },
 };
 

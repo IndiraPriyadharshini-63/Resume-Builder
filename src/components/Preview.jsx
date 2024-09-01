@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({});
 
 const Preview = (props) => {
+  console.log(props);
   const [loading, setLoading] = useState(false);
   const [resumeName, setResumeName] = useState("");
   const [modal, setModal] = useState(false);
