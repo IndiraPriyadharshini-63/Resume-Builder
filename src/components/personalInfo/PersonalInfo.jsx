@@ -14,12 +14,12 @@ import {
 
 import { connect } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
-import { ADDPERSONALINFO } from "../Redux/Actions";
+import { ADDPERSONALINFO } from "../../Redux/Actions";
 import { useForm } from "react-hook-form";
 import Avatar1 from "react-avatar-edit";
-import InputComp from "./InputComp";
-import "./styles/PersonalInfo.css";
-import BackNextBtn from "./BackNextBtn";
+import InputComp from "../input/InputComp";
+import "./PersonalInfo.css";
+import BackNextBtn from "../backNextBtn/BackNextBtn";
 
 const mapStateToProps = (state) => ({
   personalInfo: state.personalInfoReducer.personalInfo,

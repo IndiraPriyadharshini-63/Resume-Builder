@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/styles/TemplateHeader.css";
+import "./TemplateHeader.css";
 function TemplateHeader(props) {
   // console.log(props)
   const NoPic =

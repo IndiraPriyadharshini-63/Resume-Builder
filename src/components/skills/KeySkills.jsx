@@ -1,12 +1,12 @@
 import { Paper, Divider, Button } from "@mui/material";
 import React, { useState } from "react";
-import InputComp from "./InputComp";
-import BackNextBtn from "./BackNextBtn";
+import InputComp from "../input/InputComp";
 import { DeleteOutlineOutlined } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
-import { ADDNEWSKILLS, EDITSKILL, DELETESKILL } from "../Redux/Actions";
+import { ADDNEWSKILLS, EDITSKILL, DELETESKILL } from "../../Redux/Actions";
 import { connect } from "react-redux";
-import "./styles/KeySkills.css"
+import "./KeySkills.css";
+import BackNextBtn from "../backNextBtn/BackNextBtn";
 
 const mapStateToProps = (state) => ({
   skills: state.SkillReducer.skills,

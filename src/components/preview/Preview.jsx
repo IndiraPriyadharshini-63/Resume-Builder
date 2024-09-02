@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Button, CircularProgress, Container, TextField } from "@mui/material";
 import { connect } from "react-redux";
-import { templates } from "../Data/Templates";
+import { templates } from "../../Data/Templates";
 import JsPDF from "jspdf";
 import uniqid from "uniqid";
-import Modal from "./Modal";
-import "./styles/Preview.css";
+import Modal from "../modal/Modal";
+import "./Preview.css";
 
 const mapStateToProps = (state) => ({
   selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,

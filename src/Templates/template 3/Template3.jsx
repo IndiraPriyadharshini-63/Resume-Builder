@@ -1,14 +1,16 @@
 import React from "react";
 import { Container, Paper } from "@mui/material";
-import TemplateHeader from "../components/TemplateHeader";
-import TemplateHeading from "../components/TemplateHeading";
-import TemplateExperience from "../components/TemplateExperience";
-import TemplateEducation from "../components/TemplateEducation";
-import TemplateSkills from "../components/TemplateSkills";
-import { data } from "../Data/Data";
-import "../Templates/styles/Template2.css";
+import TemplateHeader from "../../components/templateHeader/TemplateHeader";
+import TemplateHeading from "../../components/TemplateHeading";
+import TemplateExperience from "../../components/TemplateExperience";
+import TemplateEducation from "../../components/TemplateEducation";
+import TemplateSkills from "../../components/TemplateSkills";
+import { data } from "../../Data/Data";
+import "./Template3.css";
 
-function Template2(props) {
+function Template3(props) {
+  // console.log(props);
+
   const personalInfo = props.personalInfo
     ? props.personalInfo
     : data.personal_info;
@@ -45,16 +47,15 @@ function Template2(props) {
         id={`${props.index}report`}
       >
         <TemplateHeader
-          primaryColor={"white"}
-          secondaryColor={"white"}
-          bgColor={"#7a3d55"}
+          primaryColor={" #3385ff"}
+          secondaryColor={"black"}
+          bgColor={"#e6e6ff"}
           personalInfo={personalInfo}
           workExperience={experiences}
         />
-
         <Container>
           <TemplateHeading
-            color={"#7a3d55"}
+            color={" #3385ff"}
             title={"Professional Experience"}
           />
           <ul style={{ paddingBottom: 10 }}>
@@ -62,11 +63,9 @@ function Template2(props) {
               return <TemplateExperience key={index} experiences={exp} />;
             })}
           </ul>
-
-          <TemplateHeading color={"#7a3d55"} title={"Education"} />
+          <TemplateHeading color={" #3385ff"} title={"Education"} />
           <TemplateEducation education={educationInfo} />
-          <TemplateHeading color={"#7a3d55"} title={"Key Skills"} />
-
+          <TemplateHeading color={" #3385ff"} title={"Key Skills"} />
           <ul style={{ marginBottom: 10 }}>
             {skills.map((skill, index) => {
               return <TemplateSkills key={index} skill={skill} />;
@@ -78,4 +77,4 @@ function Template2(props) {
   );
 }
 
-export default Template2;
+export default Template3;

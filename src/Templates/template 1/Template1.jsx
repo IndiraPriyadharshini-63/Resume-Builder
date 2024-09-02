@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Paper } from "@mui/material";
-import { data } from "../Data/Data";
-import TemplateHeader from "../components/TemplateHeader";
-import TemplateHeading from "../components/TemplateHeading";
-import TemplateExperience from "../components/TemplateExperience";
-import TemplateEducation from "../components/TemplateEducation";
-import "../Templates/styles/Template1.css";
-import TemplateSkills from "../components/TemplateSkills";
+import { data } from "../../Data/Data";
+import TemplateHeader from "../../components/templateHeader/TemplateHeader";
+import TemplateHeading from "../../components/TemplateHeading";
+import TemplateExperience from "../../components/TemplateExperience";
+import TemplateEducation from "../../components/TemplateEducation";
+import "./Template1.css";
+import TemplateSkills from "../../components/TemplateSkills";
 
 function Template1(props) {
   const personalInfo = props.personalInfo

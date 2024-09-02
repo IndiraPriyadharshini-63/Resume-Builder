@@ -1,12 +1,12 @@
 import { Divider, MenuItem, Paper, Select } from "@mui/material";
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { ADDEDUCATION } from "../Redux/Actions";
+import { ADDEDUCATION } from "../../Redux/Actions";
 import { useForm, Controller } from "react-hook-form";
-import BackNextBtn from "./BackNextBtn";
-import InputComp from "./InputComp";
-import SelectComp from "./SelectComp";
-import "./styles/Education.css"
+import InputComp from "../input/InputComp";
+import SelectComp from "../select/SelectComp";
+import "./Education.css";
+import BackNextBtn from "../backNextBtn/BackNextBtn";
 
 const Years = [
   "2024",

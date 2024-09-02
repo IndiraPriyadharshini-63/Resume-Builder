@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Image1 from "../assets/resume-image-1.jpg";
-import Image2 from "../assets/resume-image-2.jpg";
-import Image3 from "../assets/resume-image-3.jpg";
-import Footer from "./Footer";
+import Image1 from "../../assets/resume-image-1.jpg";
+import Image2 from "../../assets/resume-image-2.jpg";
+import Image3 from "../../assets/resume-image-3.jpg";
+import Footer from "../../components/footer/Footer";
 import "./Home.css";
-import TemplateImages from "./templateImages/TemplateImages";
+import TemplateImages from "../../components/templateImages/TemplateImages";
 
 
 

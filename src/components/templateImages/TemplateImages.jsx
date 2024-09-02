@@ -37,6 +37,7 @@ function TemplateImages(props ) {
           };
   return (
     <div className='carousalWrapper'>
+      <h2 className="templatesHeading">Resume Templates</h2>
       <div>
             <div className="templateList">
                   {templates.slice(currentIndex, currentIndex+3).map((t)=>(

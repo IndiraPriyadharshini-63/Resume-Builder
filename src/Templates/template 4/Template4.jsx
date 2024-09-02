@@ -1,8 +1,12 @@
-import { Call, LinkedIn, Mail, Room } from "@mui/icons-material";
 import { Paper } from "@mui/material";
 import React from "react";
-import { data } from "../Data/Data";
-import "../Templates/styles/Template4.css";
+import { data } from "../../Data/Data";
+import TemplateEducation from "../../components/TemplateEducation";
+import TemplateExperience from "../../components/TemplateExperience";
+import TemplateHeading from "../../components/TemplateHeading";
+import TemplateSkills from "../../components/TemplateSkills";
+import TemplateContact from "../../components/templateContact/TemplateContact";
+import "./Template4.css";
 
 function Template4(props) {
   console.log(props);
@@ -21,7 +25,6 @@ function Template4(props) {
     ? props.experiences
     : data.work_experience;
 
-    // console.log(experiences[0].jobTitle)
   return (
     <>
       <Paper
@@ -40,18 +43,21 @@ function Template4(props) {
             lg: "500px",
             xl: "550px",
           },
-          display:"flex",
-          flexDirection:"column", padding:"10px",
+          display: "flex",
+          flexDirection: "column",
+          padding: "10px",
         }}
         elevation={3}
         id={`${props.index}report`}
       >
         <div className="top">
-          <p className="name">{personalInfo.firstName + personalInfo.lastName}</p>
+          <p className="name">
+            {personalInfo.firstName + personalInfo.lastName}
+          </p>
           <p className="name">Software Engineer</p>
         </div>
         <hr />
-        <div className="center">
+        {/* <div className="center">
           <div className="centerCall">
             <Call />
             <span className="centerMobileNumber">{personalInfo.mobile}</span>
@@ -66,9 +72,10 @@ function Template4(props) {
           </div>
           <div className="centerLinkedIn">
             <LinkedIn />
-            <span className="centerLinkedIn">linkedIn/chandal</span>
+            <span className="centerLinkedIn">{personalInfo.linkedIn}</span>
           </div>
-        </div>
+        </div> */}
+        <TemplateContact color={"#B1A963"} personalInfo={personalInfo} />
         <hr />
         <div className="bottom">
           <div className="bottomLeft">
@@ -77,27 +84,21 @@ function Template4(props) {
             <div className="achievements"></div>
           </div>
           <div className="bottomRight">
-            <h1>Work Experience</h1>
-            <div className="experience">
-              <h3></h3>
-              <h5></h5>
-              <div className="experienceLists">
-                <ul className="experienceList">
-                  <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor
-                  </li>
-                  <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor
-                  </li>
-                  <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <TemplateHeading color={"#B1A963"} title={"Work Experience"} />
+            <ul>
+              {experiences.map((exp, index) => (
+                <TemplateExperience key={index} experiences={exp} />
+              ))}
+            </ul>
+
+            <TemplateHeading color={"#B1A963"} title={"Education"} />
+            <TemplateEducation education={educationInfo} />
+            <TemplateHeading color={"#C98A55"} title={"Key Skills"} />
+            <ul style={{ marginBottom: 10 }}>
+              {skills.map((skill, index) => {
+                return <TemplateSkills key={index} skill={skill} />;
+              })}
+            </ul>
           </div>
         </div>
       </Paper>

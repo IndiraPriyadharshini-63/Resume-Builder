@@ -2,11 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CheckSelectedId from "./components/CheckSelectedId";
-import Home from "./components/Home";
-import NavBar from "./components/Navbar";
-import "./components/Navbar.css";
-import FillDetails from "./pages/FillDetails";
-import MyResumes from "./pages/MyResumes";
+import Home from "./pages/home/Home";
+import NavBar from "./components/navbar/Navbar";
+import FillDetails from "./pages/fillDetails/FillDetails";
+import MyResumes from "./pages/myResumes/MyResumes";
 
 function App() {
   return (

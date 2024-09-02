@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { ADDEXPERIENCE, ADDEXPERIENCEALL } from "../Redux/Actions";
+import { ADDEXPERIENCE, ADDEXPERIENCEALL } from "../../Redux/Actions";
 import { Controller, useForm } from "react-hook-form";
 import { Button, Divider, MenuItem, Paper, Select } from "@mui/material";
-import BackNextBtn from "./BackNextBtn";
-import SelectComp from "./SelectComp";
-import InputComp from "./InputComp";
-import "./styles/WorkExperience.css";
+import SelectComp from "../select/SelectComp";
+import InputComp from "../input/InputComp";
+import "./WorkExperience.css";
+import BackNextBtn from "../backNextBtn/BackNextBtn";
 
 const mapStateToProps = (state) => ({
   experiences: state.workExpReducer.experiences,

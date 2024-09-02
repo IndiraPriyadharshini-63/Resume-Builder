@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./styles/FillDetails.css";
-import FillDetailsSidebar from "../components/FillDetailsSidebar";
-import PersonalInfo from "../components/PersonalInfo";
-import WorkExperience from "../components/WorkExperience";
-import Education from "../components/Education";
-import KeySkills from "../components/KeySkills";
-import Preview from "../components/Preview";
+import "./FillDetails.css";
+import FillDetailsSidebar from "../../components/FillDetailsSidebar";
+import PersonalInfo from "../../components/personalInfo/PersonalInfo";
+import WorkExperience from "../../components/workExperience/WorkExperience";
+import Education from "../../components/education/Education";
+import KeySkills from "../../components/skills/KeySkills";
+import Preview from "../../components/preview/Preview";
 
 function FillDetails(props) {
   const [tab, setTab] = useState(0);

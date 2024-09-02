@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/InputComp.css";
-import { inputCheck } from "../utilities/InputCheck";
+import "./InputComp.css";
+import {inputCheck} from "../../utilities/InputCheck"
 import { TextField } from "@mui/material";
 
 function InputComp(props) {

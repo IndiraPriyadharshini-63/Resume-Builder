@@ -2,10 +2,10 @@ import templateOneImg from "../assets/templates/download (1).png";
 import templateTwoImg from "../assets/templates/download (2).png";
 import templateThreeImg from "../assets/templates/download.png";
 import templateFour from "../assets/templates/template4.png"
-import Template1 from "../Templates/Template1";
-import Template2 from "../Templates/Template2";
-import Template3 from "../Templates/Template3";
-import Template4 from "../Templates/Template4";
+import Template1 from "../Templates/template 1/Template1";
+import Template2 from "../Templates/template 2/Template2";
+import Template3 from "../Templates/template 3/Template3";
+import Template4 from "../Templates/template 4/Template4";
 
 
 export const templates = [

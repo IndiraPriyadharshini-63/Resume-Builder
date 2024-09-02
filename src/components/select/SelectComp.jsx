@@ -1,6 +1,6 @@
 import React from "react";
 import { FormControl, FormHelperText } from "@mui/material";
-import "./styles/SelectComp.css";
+import "./SelectComp.css";
 
 function SelectComp(props) {
   return (

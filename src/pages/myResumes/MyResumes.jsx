@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import DarkEffect from "../components/DarkEffect";
-import { templates } from "../Data/Templates";
+import DarkEffect from "../../components/darkEffect/DarkEffect"
+import { templates } from "../../Data/Templates";
 import { SentimentVeryDissatisfied } from "@mui/icons-material";
 import { Box } from "@mui/system";
 import Grid from "@mui/material/Grid";
@@ -16,9 +16,9 @@ import {
   EDITSKILL,
   SELECTRESUME,
   SELECTTEMPLATE,
-} from "../Redux/Actions";
+} from "../../Redux/Actions";
 import { useNavigate } from "react-router-dom";
-import "./styles/MyResumes.css";
+import "./MyResumes.css";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

@@ -1,0 +1,13 @@
+.center{
+      display: flex;
+      justify-content: space-evenly;
+     
+}
+
+.centerCall, .centerMail, .centerLocation, .centerLinkedIn{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
