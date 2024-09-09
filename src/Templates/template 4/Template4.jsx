@@ -1,30 +1,28 @@
 import { Paper } from "@mui/material";
 import React from "react";
 import { data } from "../../Data/Data";
-import TemplateEducation from "../../components/TemplateEducation";
-import TemplateExperience from "../../components/TemplateExperience";
+
 import TemplateHeading from "../../components/TemplateHeading";
 import TemplateSkills from "../../components/TemplateSkills";
-import TemplateContact from "../../components/templateContact/TemplateContact";
+
 import "./Template4.css";
-import TemplateHeader from "../../components/templateHeader/TemplateHeader";
 
 function Template4(props) {
   console.log(props);
 
-  const personalInfo = props.personalInfo
-    ? props.personalInfo
-    : data.personal_info;
+  // const personalInfo = props.personalInfo
+  //   ? props.personalInfo
+  //   : data.personal_info;
 
   const skills = props.skills ? props.skills : data.key_skills;
 
-  const educationInfo = props.educationInfo
-    ? props.educationInfo
-    : data.education_details;
+  // const educationInfo = props.educationInfo
+  //   ? props.educationInfo
+  //   : data.education_details;
 
-  const experiences = props.experiences
-    ? props.experiences
-    : data.work_experience;
+  // const experiences = props.experiences
+  //   ? props.experiences
+  //   : data.work_experience;
 
   return (
     <>
@@ -98,16 +96,14 @@ function Template4(props) {
         <div className="bottom">
           <div className="bottomLeft">
             <div className="skills">
-              <TemplateHeading color={"#B1A963"} title={"Skills"}/>
-             <ul>
-              {skills.map((skill, index)=>(
-                <TemplateSkills key={index} skill={skill} />
-              ))}
-             </ul>
+              <TemplateHeading color={"#B1A963"} title={"Skills"} />
+              <ul>
+                {skills.map((skill, index) => (
+                  <TemplateSkills key={index} skill={skill} />
+                ))}
+              </ul>
             </div>
-            <div className="education">
-              
-            </div>
+            <div className="education"></div>
             <div className="achievements"></div>
           </div>
           <div className="bottomRight"></div>
