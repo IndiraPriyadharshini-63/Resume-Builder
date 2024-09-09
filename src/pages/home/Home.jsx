@@ -5,6 +5,7 @@ import Image1 from "../../assets/resume-image-1.jpg";
 import Image2 from "../../assets/resume-image-2.jpg";
 import Image3 from "../../assets/resume-image-3.jpg";
 import Footer from "../../components/footer/Footer";
+import ResumeIllustration from "../../assets/resume-1.png"
 import "./Home.css";
 import TemplateImages from "../../components/templateImages/TemplateImages";
 
@@ -15,21 +16,22 @@ function Home() {
     <>
       <div className="home-container d-flex flex-row justify-content-between">
         <div className="section-1 ">
-          <img
+          {/* <img
             className="resume-image resume-image-1"
             src={Image1}
             alt="template1"
-          />
-          <img
+          /> */}
+          {/* <img
             className="resume-image resume-image-2"
             src={Image2}
             alt="template2"
-          />
-          <img
+          /> */}
+          {/* <img
             className="resume-image resume-image-3"
             src={Image3}
             alt="template3"
-          />
+          /> */}
+          <img src={ResumeIllustration} alt="resumeIllustration" className="resImg"/>
         </div>
         <div className="section-1-contents p-5">
           <h2>Create your Resume Now</h2>

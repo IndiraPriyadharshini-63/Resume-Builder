@@ -7,6 +7,7 @@ import TemplateHeading from "../../components/TemplateHeading";
 import TemplateSkills from "../../components/TemplateSkills";
 import TemplateContact from "../../components/templateContact/TemplateContact";
 import "./Template4.css";
+import TemplateHeader from "../../components/templateHeader/TemplateHeader";
 
 function Template4(props) {
   console.log(props);
@@ -50,31 +51,14 @@ function Template4(props) {
         elevation={3}
         id={`${props.index}report`}
       >
-        <div className="top">
+        {/* <div className="top">
           <p className="name">
             {personalInfo.firstName + personalInfo.lastName}
           </p>
           <p className="name">Software Engineer</p>
         </div>
         <hr />
-        {/* <div className="center">
-          <div className="centerCall">
-            <Call />
-            <span className="centerMobileNumber">{personalInfo.mobile}</span>
-          </div>
-          <div className="centerMail">
-            <Mail />
-            <span className="centerMail">{personalInfo.email}</span>
-          </div>
-          <div className="centerLocation">
-            <Room />
-            <span className="centerLocation">{personalInfo.city}</span>
-          </div>
-          <div className="centerLinkedIn">
-            <LinkedIn />
-            <span className="centerLinkedIn">{personalInfo.linkedIn}</span>
-          </div>
-        </div> */}
+        
         <TemplateContact color={"#B1A963"} personalInfo={personalInfo} />
         <hr />
         <div className="bottom">
@@ -100,6 +84,33 @@ function Template4(props) {
               })}
             </ul>
           </div>
+        </div> */}
+        <div className="top">
+          <span className="name"></span>
+          <span className="designation"></span>
+        </div>
+        <div className="center">
+          <div className="mobile"></div>
+          <div className="mail"></div>
+          <div className="location"></div>
+          <div className="linkedIn"></div>
+        </div>
+        <div className="bottom">
+          <div className="bottomLeft">
+            <div className="skills">
+              <TemplateHeading color={"#B1A963"} title={"Skills"}/>
+             <ul>
+              {skills.map((skill, index)=>(
+                <TemplateSkills key={index} skill={skill} />
+              ))}
+             </ul>
+            </div>
+            <div className="education">
+              
+            </div>
+            <div className="achievements"></div>
+          </div>
+          <div className="bottomRight"></div>
         </div>
       </Paper>
     </>
