@@ -43,7 +43,7 @@ Ensure you have **Node.js** and **npm** installed on your system.
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/resume-builder.git
+git clone https://github.com/IndiraPriyadharshini-63/resume-builder.git
 
 # Navigate to the project directory
 cd resume-builder
